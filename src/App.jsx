@@ -1,28 +1,37 @@
 import './App.css'
+import { motion } from "framer-motion"
 
 function App() {
   return (
     <div className="container">
 
-      {/* HERO SECTION */}
-      <section className="hero">
-        <h1>Yaswanth Mungara</h1>
+      {/* HERO */}
+      <motion.section 
+        className="hero"
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+      >
+        <h1 className="gradient-text">Yaswanth Mungara</h1>
         <p>Full Stack Developer | React | Java | DevOps</p>
 
         <div className="buttons">
           <a href="#projects">View Projects</a>
-          <a href="mailto:iyaswanthm@gmail.com">Contact Me</a>
+          <a href="mailto:iyaswanthm@gmail.com">Contact</a>
         </div>
-      </section>
+      </motion.section>
 
       {/* ABOUT */}
-      <section className="card">
+      <motion.section 
+        className="card"
+        whileHover={{ scale: 1.03 }}
+      >
         <h2>About Me</h2>
         <p>
-          I am a B.Tech student at KL University with strong interest in full stack development.
-          I have built projects using React and Java and also worked with DevOps tools like Jenkins and Tomcat.
+          Passionate full stack developer with experience in React, Java,
+          and DevOps tools like Jenkins and Tomcat. I enjoy building
+          real-world applications and solving problems.
         </p>
-      </section>
+      </motion.section>
 
       {/* PROJECTS */}
       <section id="projects">
@@ -30,47 +39,46 @@ function App() {
 
         <div className="grid">
 
-          <div className="card">
-            <h3>Job Portal</h3>
-            <p>React + Vite + Java + MySQL</p>
-            <a href="https://github.com/MungaraYaswanth/JobPortal" target="_blank">GitHub</a>
-          </div>
-
-          <div className="card">
-            <h3>Music Streaming App</h3>
-            <p>React + Java</p>
-            <a href="https://github.com/YOUR_USERNAME/music-app" target="_blank">GitHub</a>
-          </div>
-
-          <div className="card">
-            <h3>CI/CD Pipeline</h3>
-            <p>Jenkins + Tomcat</p>
-            <a href="#">GitHub</a>
-          </div>
-
-          <div className="card">
-            <h3>Lane Detection</h3>
-            <p>Computer Vision</p>
-            <a href="#">GitHub</a>
-          </div>
+          {[
+            {title: "Job Portal", tech: "React + Java"},
+            {title: "Music Streaming App", tech: "React + Java"},
+            {title: "CI/CD Pipeline", tech: "Jenkins + Tomcat"},
+            {title: "Lane Detection", tech: "Computer Vision"}
+          ].map((p, i) => (
+            <motion.div 
+              className="card"
+              key={i}
+              whileHover={{ scale: 1.05 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: i * 0.2 }}
+            >
+              <h3>{p.title}</h3>
+              <p>{p.tech}</p>
+            </motion.div>
+          ))}
 
         </div>
       </section>
 
       {/* SKILLS */}
-      <section className="card">
+      <motion.section 
+        className="card"
+        whileHover={{ scale: 1.03 }}
+      >
         <h2>Skills</h2>
-        <p>
-          C | Java | Python (Basics) | JavaScript | React | MySQL | Jenkins | Tomcat
-        </p>
-      </section>
+        <p>C | Java | Python | React | MySQL | Jenkins</p>
+      </motion.section>
 
       {/* CONTACT */}
-      <section className="card">
+      <motion.section 
+        className="card"
+        whileHover={{ scale: 1.03 }}
+      >
         <h2>Contact</h2>
         <p>Email: iyaswanthm@gmail.com</p>
         <p>Phone: 6300826599</p>
-      </section>
+      </motion.section>
 
     </div>
   )
