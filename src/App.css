@@ -1,71 +1,140 @@
 body {
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: #000000;
-  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  background: #000;
+  color: white;
+  cursor: none;
+}
+
+/* CURSOR */
+.cursor {
+  position: fixed;
+  width: 12px;
+  height: 12px;
+  background: red;
+  border-radius: 90%;
+  pointer-events: none;
+  box-shadow: 0 0 20px red, 0 0 40px red;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}
+
+/* PARTICLES */
+#tsparticles {
+  position: fixed;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+}
+
+h2 {
+  margin-bottom: 15px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  display: inline-block;
+}
+/* NAVBAR */
+.navbar {
+  position: fixed;
+  width: 100%;
+  background: rgba(0,0,0,0.9);
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 40px;
+}
+
+.navbar a {
+  margin-left: 20px;
+  color: white;
+  text-decoration: none;
+}
+
+.navbar {
+  padding: 20px 40px;
+  color: red;
 }
 
 /* CONTAINER */
 .container {
-  padding: 40px;
+  padding: 140px 20px 60px;
   text-align: center;
 }
 
 /* HERO */
+.hero {
+  margin-top: 40px;
+  margin-bottom: 80px;
+}
+
 .hero h1 {
-  font-size: 48px;
-  font-weight: 700;
+  margin-bottom: 15px;
 }
 
 .hero p {
-  color: #bbbbbb;
+  margin-bottom: 25px;
 }
 
-/* BUTTONS - RED GLOW */
+/* BUTTONS */
 .buttons a {
   margin: 10px;
   padding: 12px 24px;
   background: linear-gradient(45deg, #ff0000, #ff4d4d);
+  border-radius: 10px;
   color: white;
   text-decoration: none;
-  border-radius: 10px;
-  transition: 0.3s;
-  box-shadow: 0 0 10px rgba(255,0,0,0.5);
+  box-shadow: 0 0 15px red;
 }
 
 .buttons a:hover {
-  transform: scale(1.08);
-  box-shadow: 0 0 25px rgba(255,0,0,0.9);
+  box-shadow: 0 0 30px red;
 }
 
-/* CARD */
 .card {
-  background: #0a0a0a;
+  background: #050505;
   padding: 25px;
-  margin: 20px auto;
+  margin: 10px auto;
   border-radius: 12px;
-  width: 80%;
-  border: 1px solid rgba(255,255,255,0.1);
+  width: 60%;   /* was 80% */
+  border: 1px solid rgba(255,255,255,0.05);
   transition: 0.3s;
 }
 
-/* CARD HOVER GLOW */
-.card:hover {
-  box-shadow: 0 0 20px rgba(255,0,0,0.3);
-  transform: translateY(-5px);
+.project-card {
+  text-decoration: none;
+  color: white;
+  display: block;
+  transition: 0.3s;
+  cursor: pointer;
 }
 
-/* GRID */
+/* 🔥 Hover effect (strong + clean) */
+.project-card:hover {
+  background: #000;
+  border: 1px solid red;
+  box-shadow: 
+    0 0 10px red,
+    0 0 30px red,
+    0 0 60px red;
+  transform: translateY(-8px) scale(1.02);
+}
+
+.project-card:hover h3 {
+  color: #ff1919;
+}
+
+section {
+  margin-bottom: 60px;
+}
+
 .grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
 }
 
-/* HEADINGS */
-h2 {
-  margin-bottom: 10px;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
-  display: inline-block;
-  padding-bottom: 5px;
+@media (max-width: 600px) {
+  .card {
+    width: 90%;
+  }
 }
