@@ -159,7 +159,7 @@ const projects = [
     desc: 'Advanced lane detection pipeline using OpenCV with gradient/color thresholding, perspective transformation, sliding window search, and polynomial lane fitting for real-time visualization.',
     tech: ['Python', 'OpenCV', 'NumPy', 'Computer Vision'],
     github: '#',
-  },
+  },0
 ]
 
 const skillGroups = [
