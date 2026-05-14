@@ -159,7 +159,7 @@ const projects = [
     desc: 'Advanced lane detection pipeline using OpenCV with gradient/color thresholding, perspective transformation, sliding window search, and polynomial lane fitting for real-time visualization.',
     tech: ['Python', 'OpenCV', 'NumPy', 'Computer Vision'],
     github: '#',
-  },0
+  }
 ]
 
 const skillGroups = [
@@ -462,7 +462,7 @@ export default function App() {
                 { ico: '✉', label: 'Email', val: 'iyaswanthm@gmail.com', href: 'mailto:iyaswanthm@gmail.com' },
                 { ico: '☎', label: 'Phone', val: '+91 6300826599', href: 'tel:+916300826599' },
                 { ico: '⚲', label: 'Location', val: 'Andhra Pradesh, India', href: '#' },
-                { ico: '↗', label: 'LinkedIn', val: 'linkedin.com/in/yaswanthmungara', href: 'https://linkedin.com' },
+                { ico: '↗', label: 'LinkedIn', val: 'linkedin - Yaswanth Mungara', href: 'https://linkedin.com/in/yaswanthmungara' },
               ].map(c => (
                 <a href={c.href} key={c.label} className="contact-row" target={c.href.startsWith('http') ? '_blank' : undefined} rel="noopener noreferrer">
                   <div className="contact-ico">{c.ico}</div>
