@@ -2,6 +2,7 @@ import './App.css'
 import { motion } from 'framer-motion'
 import { useEffect, useRef, useState } from 'react'
 import Typed from 'typed.js'
+import { Analytics } from '@vercel/analytics/react'
 
 function ParticleCanvas() {
   const ref = useRef(null)
@@ -488,6 +489,8 @@ export default function App() {
         <span className="footer-l">Yaswanth Mungara — CSE, KL University</span>
         <a href="#" className="footer-r">Back to top</a>
       </footer>
+
+      <Analytics />
     </>
   )
 }
