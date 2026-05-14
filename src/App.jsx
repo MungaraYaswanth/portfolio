@@ -226,10 +226,26 @@ const education = [
 ]
 
 const certs = [
-  { name: 'Oracle Certified Professional — OCI Generative AI Professional', year: '2025' },
-  { name: 'Salesforce AI Associate', year: '2024' },
-  { name: 'Aviatrix Certified Engineer — Multicloud Network Associate', year: '2025' },
-  { name: 'Scrum Fundamentals Certified — Software Engineering', year: '2025' },
+  {
+    name: 'Oracle Certified Professional — OCI Generative AI Professional',
+    year: '2025',
+    file: '/certificates/oracle.pdf',
+  },
+  {
+    name: 'Salesforce AI Associate',
+    year: '2024',
+    file: '/certificates/salesforce.pdf',
+  },
+  {
+    name: 'Aviatrix Certified Engineer — Multicloud Network Associate',
+    year: '2025',
+    file: '/certificates/aviatrix.pdf',
+  },
+  {
+    name: 'Scrum Fundamentals Certified — Software Engineering',
+    year: '2025',
+    file: '/certificates/scrum.pdf',
+  },
 ]
 
 export default function App() {
@@ -293,7 +309,7 @@ export default function App() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.25 }}
         >
-          <strong>Full Stack Developer</strong> &nbsp;·&nbsp; <strong>AI / ML Engineer</strong> &nbsp;·&nbsp; Computer Vision
+          <strong>Full Stack Developer</strong> &nbsp;·&nbsp; <strong>AI / ML Engineer</strong> &nbsp;·&nbsp; <strong>Gen AI Prompt Engineer</strong>
         </motion.p>
 
         <motion.p
@@ -377,13 +393,21 @@ export default function App() {
               </div>
               <div className="cert-list">
                 {certs.map(c => (
-                  <div className="cert-item" key={c.name}>
-                    <div className="cert-dot" />
-                    <span>{c.name}</span>
-                    <span className="cert-year">{c.year}</span>
-                  </div>
-                ))}
-              </div>
+                  <a
+                  href={c.file}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="cert-item"
+                  key={c.name}
+                  >
+                  <div className="cert-dot" />
+                    
+                <span>{c.name}</span>
+                    
+              <span className="cert-year">{c.year}</span>
+              </a>
+            ))}
+            </div>
             </div>
           </div>
         </Reveal>
